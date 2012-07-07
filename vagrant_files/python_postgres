@@ -6,6 +6,7 @@ Vagrant::Config.run do |config|
   config.vm.forward_port 8000, 8000
   config.vm.network :hostonly, "33.33.33.10"
 
+  config.vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
   config.vm.provision :chef_solo do |chef|
 
     chef.recipe_url = "http://cloud.github.com/downloads/Mathew/chef_recipes/cookbooks.tar.gz"
