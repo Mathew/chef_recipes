@@ -37,6 +37,11 @@ if node.has_key?("dev_env")
         command "echo \"listen_addresses = 'localhost'\" >> /etc/postgresql/8.4/main/postgresql.conf"
         notifies :restart, resources(:service => "postgresql")
     end
+
+    execute "postgres-vagrant-user" do
+        command "sudo -u postgres -psql -c \"CREATE ROLE vagrant LOGIN SUPERUSER\""
+        notifies :restart, resources(:service => "postgresql")
+    end
 end
 
 execute "postgres-change-password" do
