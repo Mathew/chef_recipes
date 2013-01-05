@@ -39,7 +39,7 @@ if node.has_key?("dev_env")
     end
 
     execute "postgres-vagrant-user" do
-        command "sudo -u postgres -psql -c \"CREATE ROLE vagrant LOGIN SUPERUSER\""
+        command "sudo -u postgres psql -c \"CREATE ROLE vagrant LOGIN SUPERUSER\""
         notifies :restart, resources(:service => "postgresql")
     end
 end
