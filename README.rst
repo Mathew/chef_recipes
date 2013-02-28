@@ -1,8 +1,8 @@
 ==========================================================
- ``Chef Recipies`` -- For working with Vagrant.
+ ``Chef Recipes`` -- For working with Vagrant.
 ==========================================================
 
-A set of Chef recipies that I am using to provision virtual machines with
+A set of Chef recipes that I am using to provision virtual machines with
 Vagrant for **local development**. They cut corners, do bad things and for this
 reason should **not** be used for production/deployment or any publicly 
 visible servers - however, they could be adapted fairly easily to work well 
